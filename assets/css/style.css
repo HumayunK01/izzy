@@ -23,14 +23,12 @@ html {
 }
 
 body {
-  background-color: var(--body-background-color);
+  background-color: var(--header-background-color);
 }
 
 a {
   font-weight: 500;
 }
-
-
 
 /* ---------------- NAVIGATION CSS ---------------- */
 .navbar {
@@ -38,7 +36,7 @@ a {
   padding-left: 20px;
   height: 50px;
   display: flex;
-  position: relative;
+  position: fixed;
   align-items: center;
   justify-content: space-around;
   background-color: var(--header-background-color);
@@ -70,6 +68,7 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-transform: capitalize;
 }
 
 .links a .icons {
@@ -148,8 +147,6 @@ a {
 }
 /* ---------------- NAVIGATION CSS ENDS ---------------- */
 
-
-
 /* ---------------- HOME PAGE CSS ---------------- */
 
 .home {
@@ -157,7 +154,7 @@ a {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 50px);
+  height: 100vh;
   background-image: url("../img/banner.svg");
   background-attachment: fixed;
 }
@@ -203,7 +200,7 @@ a {
 /* ---------------- RESPONSIVE HOME PAGE CSS ---------------- */
 @media (max-width: 640px) {
   .home .hero p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .home .hero h1 {
@@ -216,3 +213,135 @@ a {
   }
 }
 /* ---------------- HOME PAGE CSS ENDS ---------------- */
+
+/* ---------------- SKILLS PAGE CSS ---------------- */
+.skills {
+  width: 100%;
+  height: auto;
+  padding: 0px 13%;
+  background-color: var(--header-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.skills_head {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+.skills_head h2 {
+  color: #000;
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skills_head h2 .icons {
+  margin-right: 5px;
+}
+
+.skills_head p {
+  color: var(--hover-color);
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.skills_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 50px;
+  margin: 40px 0;
+}
+
+.skills_main .skill_bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill_bar .info p:nth-child(2) {
+  font-weight: 500;
+}
+
+.skill_bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--body-background-color);
+  border-radius: 25px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.skill_bar .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--hover-color);
+  border-radius: 25px;
+}
+
+/* ======== HTML SKILL BAR ======== */
+.skill_bar .bar .html {
+  width: 100%;
+  animation: html 2s;
+}
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ======== CSS SKILL BAR ======== */
+.skill_bar .bar .css {
+  width: 100%;
+  animation: css 2s;
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ======== JS SKILL BAR ======== */
+.skill_bar .bar .js {
+  width: 30%;
+  animation: sass 2s;
+}
+@keyframes js {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
+}
+/* ---------------- RESPONSIVE SKILLS PAGE CSS ---------------- */
+@media (max-width: 640px) {
+  .skills_main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .skills_head h2 {
+    font-size: 25px;
+  }
+  .skills_head p {
+    font-size: 14px;
+  }
+}
+/* ---------------- SKILLS PAGE CSS ENDS---------------- */
