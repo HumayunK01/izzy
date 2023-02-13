@@ -33,7 +33,7 @@ a {
   padding-left: 20px;
   height: 50px;
   display: flex;
-  position: relative;
+  position: fixed;
   align-items: center;
   justify-content: space-around;
   background-color: var(--background-color);
@@ -61,6 +61,10 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.links a .icons {
+  margin-right: 7px;
 }
 
 .links a:hover {
@@ -121,8 +125,10 @@ a {
     width: 100%;
   }
 
-  .links .icons {
-    display: none;
+  .links a .icons {
+    top: 2px;
+    margin-right: 7px;
+    position: relative;
   }
 
   #humburger:not(:checked) ~ .links {
@@ -130,6 +136,7 @@ a {
   }
 
   #hamburger:checked ~ .links {
-    height: calc(100vh - 50px);
+    height: calc(27vh - 50px);
+    border-bottom: 1px solid var(--hover-color);
   }
 }
