@@ -1,14 +1,13 @@
 /* ---------------- GOOGLE FONT ---------------- */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
-
 /* ---------------- VARIABLES ---------------- */
 :root {
   --primary-font-color: #000;
-  --primary-background-color: #d6e4f0;
-  --background-color: #f6f6f6;
-  --hover-color: #3466a9;
+  --body-background-color: #c8d8e4;
+  --header-background-color: #f2f2f2;
+  --hover-color: #52ab98;
+  --dark-hover-color: #2b6777;
 }
-
 /* ---------------- COMMON CSS ---------------- */
 * {
   margin: 0;
@@ -19,13 +18,19 @@
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--primary-background-color);
+  background-color: var(--body-background-color);
 }
 
 a {
   font-weight: 500;
 }
+
+
 
 /* ---------------- NAVIGATION CSS ---------------- */
 .navbar {
@@ -33,10 +38,10 @@ a {
   padding-left: 20px;
   height: 50px;
   display: flex;
-  position: fixed;
+  position: relative;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--background-color);
+  background-color: var(--header-background-color);
 }
 
 .nav-title h2 {
@@ -44,6 +49,10 @@ a {
   font-size: 1.5rem;
   user-select: none;
   cursor: pointer;
+}
+
+.nav-title span {
+  color: var(--hover-color);
 }
 
 .hamburgerMenu {
@@ -69,15 +78,14 @@ a {
 
 .links a:hover {
   background-color: var(--hover-color);
-  color: var(--background-color);
+  color: var(--header-background-color);
 }
 
 #hamburger {
   display: none;
 }
-
 /* ---------------- RESPONSIVE NAVIGATION CSS ---------------- */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .navbar {
     justify-content: space-between;
   }
@@ -116,7 +124,7 @@ a {
     height: 0px;
     border-top: 1px solid var(--hover-color);
     overflow-y: hidden;
-    background-color: var(--background-color);
+    background-color: var(--header-background-color);
     transition: all 0.3s;
   }
 
@@ -126,9 +134,7 @@ a {
   }
 
   .links a .icons {
-    top: 2px;
     margin-right: 7px;
-    position: relative;
   }
 
   #humburger:not(:checked) ~ .links {
@@ -140,3 +146,73 @@ a {
     border-bottom: 1px solid var(--hover-color);
   }
 }
+/* ---------------- NAVIGATION CSS ENDS ---------------- */
+
+
+
+/* ---------------- HOME PAGE CSS ---------------- */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-image: url("../img/banner.svg");
+  background-attachment: fixed;
+}
+
+.home .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+}
+
+.home .hero p {
+  font-size: 2rem;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--header-background-color);
+  background-color: var(--hover-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.home .hero h1 {
+  color: var(--header-background-color);
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-shadow: 4px 3px 0px var(--dark-hover-color),
+    9px 8px 4px rgba(0, 0, 0, 0.15);
+}
+
+.home .hero a {
+  padding: 20px 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--header-background-color);
+  background-color: var(--hover-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.home .hero a .icon {
+  margin-right: 4px;
+}
+/* ---------------- RESPONSIVE HOME PAGE CSS ---------------- */
+@media (max-width: 640px) {
+  .home .hero p {
+    font-size: 0.8rem;
+  }
+
+  .home .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .home .hero a {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
+/* ---------------- HOME PAGE CSS ENDS ---------------- */
