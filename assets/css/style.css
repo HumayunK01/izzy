@@ -322,7 +322,7 @@ a {
 /* ======== JS SKILL BAR ======== */
 .skill_bar .bar .js {
   width: 30%;
-  animation: sass 2s;
+  animation: js 2s;
 }
 @keyframes js {
   0% {
@@ -330,6 +330,20 @@ a {
   }
   100% {
     width: 30%;
+  }
+}
+
+/* ======== GRAPHIC DESIGN SKILL BAR ======== */
+.skill_bar .bar .graphic {
+  width: 100%;
+  animation: graphic 2s;
+}
+@keyframes graphic {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
   }
 }
 /* ---------------- RESPONSIVE SKILLS PAGE CSS ---------------- */
