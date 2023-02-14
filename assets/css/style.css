@@ -375,6 +375,7 @@ a {
   padding: 0px 7%;
 }
 
+/* ======== CARDS TITLE CSS ======== */
 .projects .projects-head {
   display: flex;
   flex-direction: column;
@@ -411,6 +412,7 @@ a {
   margin-bottom: 25px;
 }
 
+/* ======== CARD CSS INDIVIDUAL ======== */
 .projects .projects-body .project {
   background: #f6f6f6;
   width: calc(400px - 20px);
@@ -458,6 +460,7 @@ a {
   font-size: 18px;
 }
 
+/* ======== EXTERNAL LINK CSS(VIEW MORE) ======== */
 .projects .external-link {
   padding: 10px 20px;
   background-color: var(--hover-color);
