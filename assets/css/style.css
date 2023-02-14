@@ -40,6 +40,7 @@ a {
   align-items: center;
   justify-content: space-around;
   background-color: var(--header-background-color);
+  z-index: 1;
 }
 
 .nav-title h2 {
@@ -76,7 +77,7 @@ a {
 }
 
 .links a:hover {
-  background-color: var(--hover-color);
+  background-color: var(--dark-hover-color);
   color: var(--header-background-color);
 }
 
@@ -141,7 +142,7 @@ a {
   }
 
   #hamburger:checked ~ .links {
-    height: calc(250px - 50px);
+    height: calc(195px - 50px);
     border-bottom: 1px solid var(--hover-color);
   }
 }
@@ -231,7 +232,7 @@ a {
   display: grid;
   place-items: center;
   text-align: center;
-  margin: 40px 0 0 0;
+  margin: 50px 0 0 0;
 }
 
 .skills_head h2 {
@@ -288,11 +289,15 @@ a {
   position: absolute;
   background-color: var(--hover-color);
   border-radius: 25px;
+  transition: all 0.2s;
+}
+.skill_bar .bar span:hover {
+  background-color: var(--dark-hover-color);
 }
 
 /* ======== HTML SKILL BAR ======== */
 .skill_bar .bar .html {
-  width: 100%;
+  width: 95%;
   animation: html 2s;
 }
 
@@ -301,13 +306,13 @@ a {
     width: 0%;
   }
   100% {
-    width: 100%;
+    width: 95%;
   }
 }
 
 /* ======== CSS SKILL BAR ======== */
 .skill_bar .bar .css {
-  width: 100%;
+  width: 95%;
   animation: css 2s;
 }
 @keyframes css {
@@ -315,7 +320,7 @@ a {
     width: 0%;
   }
   100% {
-    width: 100%;
+    width: 95%;
   }
 }
 
@@ -359,3 +364,130 @@ a {
   }
 }
 /* ---------------- SKILLS PAGE CSS ENDS---------------- */
+
+/* ---------------- PROJECTS PAGE CSS ---------------- */
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0px 30px 0;
+  padding: 0px 7%;
+}
+
+.projects .projects-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.projects .projects-head h2 {
+  color: #000;
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projects .projects-head p {
+  color: var(--hover-color);
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.projects .projects-head .icons {
+  margin-right: 5px;
+}
+
+.projects .projects-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.projects .projects-body .project {
+  background: #f6f6f6;
+  width: calc(400px - 20px);
+  margin-bottom: 20px;
+  margin-left: 20px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 5px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px;
+  border-radius: 7px;
+}
+
+.projects .projects-body .project img {
+  width: 100%;
+  display: block;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.projects .projects-body .project .project-content {
+  background: var(--hover-color);
+  padding: 5px 15px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s;
+}
+
+.projects .projects-body .project .project-content:hover {
+  background-color: var(--dark-hover-color);
+}
+
+.projects .projects-body .project .project-content p {
+  font-weight: 500;
+  color: #fff;
+  user-select: none;
+}
+
+.projects .projects-body .project .project-content .project-links{
+  padding: 15px 0;
+}
+
+.projects .projects-body .project .project-content .project-links i{
+  color: var(--header-background-color);
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.projects .external-link {
+  padding: 10px 20px;
+  background-color: var(--hover-color);
+  color: var(--header-background-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.projects .external-link i {
+  margin-right: 5px;
+}
+
+.projects .external-link:hover {
+  background-color: var(--dark-hover-color);
+}
+
+/* ---------------- RESPONSIVE PROJECTS PAGE CSS ---------------- */
+@media (max-width: 640px) {
+  .projects .projects-head h2 {
+    font-size: 25px;
+  }
+  .projects .projects-head p {
+    font-size: 14px;
+  }
+  .projects .projects-body .project {
+    margin: 10px;
+    width: calc(350px - 20px);
+  }
+}
+
+/* ---------------- PROJECTS PAGE CSS ENDS ---------------- */
